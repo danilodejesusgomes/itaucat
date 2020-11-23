@@ -19,7 +19,7 @@ Para iniciar o desenvolvimento, é necessário clonar o projeto do GitHub num di
 
 ```shell
 cd "diretorio de sua preferencia"
-git clone https://github.com/danilodejesusgomes/apiscatfoto
+git clone https://github.com/danilodejesusgomes/itaucat
 ```
 
 ### Construção (Build)
@@ -29,6 +29,14 @@ Obs: Sempre verifique se sua porta 8080 esta disponivel para aplicacao. ah você
 ```shell
 mvn clean install
 ```
+Acionar API de estimulo de carga inicial abaixo:
+
+```shell
+http://<local>:<Port>/carga
+
+exemplo:
+http://localhost:8080/carga
+```
 
 ### Deploy (Docker)
 Você também pode criar um ambiente em container utilizando o docker. Os arquivos de Dockerfile e docker-compose estão disponiveis na raiz do projeto e para subir a aplicação basta executar o comando abaixo:
@@ -37,6 +45,14 @@ Você também pode criar um ambiente em container utilizando o docker. Os arquiv
 cd "diretorio raiz do projeto"
 docker-compose up --build
 ```
+Acionar API de estimulo de carga inicial abaixo:
+
+```shell
+http://<local>:<Port>/carga
+
+exemplo:
+http://localhost:8080/carga
+```
 
 ### Cloud (AWS)
 Você também pode criar um ambiente em nuvem AWS via container Docker. Para subir a aplicação para AWS eu sugiro utilizar o serviço AWS Elastic Beanstalk usando o docker como ferramenta onde você poderá fazer um deploy facilmente com o arquivo Dockerrun.aws.json localizado no diretorio raiz deste projeto. Neste arquivo já contem o endereço de imagem no Docker-Hub para subir esta aplicação.
@@ -44,6 +60,15 @@ Você também pode criar um ambiente em nuvem AWS via container Docker. Para sub
 ```shell
 arquivo de Imagem da aplicação no Docker-Hub
 danilojgomes/backend-itaucat:v4.0
+```
+
+Acionar API de estimulo de carga inicial abaixo:
+
+```shell
+http://<dominio>/carga
+
+exemplo:
+http://backenditauthecat-env.eba-abdxxcqb.us-east-1.elasticbeanstalk.com/carga
 ```
 
 ### Como monitorar a saúde das APIs
