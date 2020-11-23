@@ -1,0 +1,9 @@
+version: '3'
+services:
+  backitaucat:
+    build:
+      context: ./
+      dockerfile: ./Dockerfile
+    image: backenditaucat
+    ports:
+      - '8080:8080'

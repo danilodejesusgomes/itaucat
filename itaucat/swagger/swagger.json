@@ -1,0 +1,243 @@
+{
+  "swagger": "2.0",
+  "schemes": [
+    "http",
+    "https"
+  ],
+  "host": "localhost:9191",
+  "basePath": "/backitaucat/v1",
+  "info": {
+    "version": "1.0.0",
+    "title": "Processo Seletivo Itau Apis TheCats",
+    "description": "API's de consulta a dados carregados na base",
+    "termsOfService": "http://localhost:9191/backitaucat/v1/termouso",
+    "contact": {
+      "name": "Suporte",
+      "url": "http://localhost:9191/backitaucat/v1/suporte",
+      "email": "suporte@gmail.com"
+    }
+  },
+  "tags": [
+    {
+      "name": "Cat"
+    },
+    {
+      "name": "Foto"
+    }
+  ],
+  "paths": {
+    "/cat": {
+      "get": {
+        "tags": [
+          "Cat"
+        ],
+        "summary": "Lista todos os gatos",
+        "description": "lista todos os gatos da base",
+        "operationId": "ListaGatos",
+        "consumes": [
+          "aplication/json"
+        ],
+        "produces": [
+          "aplication/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "Consulta realizada com sucesso"
+          },
+          "500": {
+            "description": "Erro no servidor"
+          }
+        }
+      }
+    },
+    "/cat/raca/{raca}": {
+      "get": {
+        "tags": [
+          "Cat"
+        ],
+        "summary": "Lista todos os gatos da raca informada",
+        "description": "lista todos os gatos da base referente a raca informada",
+        "operationId": "ListarGatosPorRaca",
+        "consumes": [
+          "aplication/json"
+        ],
+        "produces": [
+          "aplication/json"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "raca",
+            "type": "string",
+            "format": "string",
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Consulta realizada com sucesso"
+          },
+          "500": {
+            "description": "Erro no servidor"
+          }
+        }
+      }
+    },
+    "/cat/origem/{origem}": {
+      "get": {
+        "tags": [
+          "Cat"
+        ],
+        "summary": "Lista todos os gatos da origem informada",
+        "description": "lista todos os gatos da base referente a origem informada",
+        "operationId": "ListarGatosPorOrigem",
+        "consumes": [
+          "aplication/json"
+        ],
+        "produces": [
+          "aplication/json"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "origem",
+            "type": "string",
+            "format": "string",
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Consulta realizada com sucesso"
+          },
+          "500": {
+            "description": "Erro no servidor"
+          }
+        }
+      }
+    },
+    "/cat/temperamento/{temperamento}": {
+      "get": {
+        "tags": [
+          "Cat"
+        ],
+        "summary": "Lista todos os gatos da temperamento informado",
+        "description": "lista todos os gatos da base referente ao temperamento informado",
+        "operationId": "ListarGatosPorTemperamento",
+        "consumes": [
+          "aplication/json"
+        ],
+        "produces": [
+          "aplication/json"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "temperamento",
+            "type": "string",
+            "format": "string",
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Consulta realizada com sucesso"
+          },
+          "500": {
+            "description": "Erro no servidor"
+          }
+        }
+      }
+    },
+    "/Foto": {
+      "get": {
+        "tags": [
+          "Foto"
+        ],
+        "summary": "Lista todos as fotos de gatos",
+        "description": "lista todos as fotos de gatos da base",
+        "operationId": "ListaFotosGatos",
+        "consumes": [
+          "aplication/json"
+        ],
+        "produces": [
+          "aplication/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "Consulta realizada com sucesso"
+          },
+          "500": {
+            "description": "Erro no servidor"
+          }
+        }
+      }
+    },
+    "/foto/categoria/{idCategoria}": {
+      "get": {
+        "tags": [
+          "Foto"
+        ],
+        "summary": "Lista todos as fotos da categoria informada",
+        "description": "lista todos as fotos de gatos da base referente a categoria informada",
+        "operationId": "ListarFotosGatosPorCategoria",
+        "consumes": [
+          "aplication/json"
+        ],
+        "produces": [
+          "aplication/json"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "idCategoria",
+            "type": "string",
+            "format": "string",
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Consulta realizada com sucesso"
+          },
+          "500": {
+            "description": "Erro no servidor"
+          }
+        }
+      }
+    },
+    "/foto/raca/{idRaca}": {
+      "get": {
+        "tags": [
+          "Foto"
+        ],
+        "summary": "Lista todos as fotos da raca informada",
+        "description": "lista todos as fotos de gatos da base referente a raca informada",
+        "operationId": "ListarFotosGatosPorRaca",
+        "consumes": [
+          "aplication/json"
+        ],
+        "produces": [
+          "aplication/json"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "idRaca",
+            "type": "string",
+            "format": "string",
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Consulta realizada com sucesso"
+          },
+          "500": {
+            "description": "Erro no servidor"
+          }
+        }
+      }
+    }
+  }
+}
